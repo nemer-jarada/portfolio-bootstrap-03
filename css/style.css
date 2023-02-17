@@ -1,0 +1,373 @@
+:root {
+  --main-color: #149ddd;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  position: relative;
+  z-index: -1;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+.main-title h2 {
+  width: fit-content;
+  color: #173b6c;
+}
+.main-title h2::after,
+.text-box .desc::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  background: var(--main-color);
+  bottom: -3px;
+  left: 0;
+  z-index: -1;
+}
+.about,
+.facts,
+.skills,
+.resume,
+.portfolio,
+.services,
+.testimonials,
+.contact {
+  width: calc(100% - 300px);
+  margin-left: 300px;
+  z-index: -7;
+}
+@media (max-width: 991px) {
+  .about,
+  .facts,
+  .skills,
+  .resume,
+  .portfolio,
+  .services,
+  .testimonials,
+  .contact {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+/* Start Aside */
+aside {
+  width: 300px;
+  left: 0;
+  transition: 0.7s;
+  background-color: #040b14;
+}
+aside .name li {
+  margin-right: 15px;
+}
+aside .name li a {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+aside .name li a:hover {
+  color: var(--main-color);
+  margin-bottom: 5px;
+}
+aside .name h3 {
+  transition: 0.3s;
+}
+aside .name h3:hover {
+  color: var(--main-color) !important;
+}
+aside > ul li {
+  margin-bottom: 15px;
+}
+aside > ul li a {
+  font-size: 18px;
+  color: #a8a9b4;
+  transition: 0.3s;
+}
+aside > ul li a:hover {
+  color: white;
+  padding-left: 8px;
+}
+aside > ul li a svg {
+  margin-right: 17px;
+  transition: 0.3s;
+}
+aside > ul li a:hover svg {
+  color: var(--main-color) !important;
+}
+
+@media (max-width: 991px) {
+  #aside {
+    left: -300px;
+  }
+}
+@media (min-width: 992px) {
+  #aside {
+    left: 0;
+  }
+}
+/* End Aside */
+/* Start Hero */
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -5;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.hero .toggle svg {
+  padding: 15px;
+  cursor: pointer;
+}
+.hero .text-box {
+  left: 30%;
+  transform: translateY(-50%);
+}
+.hero .text-box h2 {
+  font-size: 50px;
+}
+@media (max-width: 767px) {
+  .hero .text-box {
+    text-align: center;
+    width: 100%;
+    left: 0;
+  }
+}
+/* End Hero */
+/* Start About */
+.about {
+  z-index: -8;
+}
+@media (max-width: 767px) {
+  .about,
+  .facts,
+  .resume {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.about .info ul li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.about .info ul li svg {
+  color: #149ddd;
+  margin-right: 8px;
+}
+.about .heading {
+  color: #173b6c;
+}
+
+@media (max-width: 991px) {
+  .about .info ul:first-child {
+    margin-bottom: 24px;
+  }
+}
+/* End About */
+/* Start Facts */
+
+.facts .box svg {
+  font-size: 50px;
+  color: #149ddd;
+}
+.facts .box .content h1 {
+  font-size: 50px;
+}
+@media (max-width: 767px) {
+  .facts .box {
+    justify-content: center;
+  }
+}
+/* End Facts */
+/*Start Skills */
+.skills {
+  background-color: #f5f8fd;
+}
+.skills .progress-bar {
+  background-color: #149ddd;
+}
+/*End Skills */
+/* Start Resume */
+.resume .box {
+  border-left: 2px solid #1f5297;
+}
+.resume .box.first::before,
+.resume .box.second::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -10.5px;
+  background: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #1f5297;
+}
+.resume .box .list-style {
+  list-style: disc !important;
+}
+.resume .box.second span {
+  background-color: #e4edf9;
+}
+.resume .box.second::after {
+  content: "";
+  position: absolute;
+  top: 52%;
+  left: -10.5px;
+  background: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #1f5297;
+}
+/* End Resume */
+/* Start Portfolio */
+.portfolio {
+  background-color: #f5f8fd;
+}
+.portfolio .nav {
+  width: 300px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.portfolio .nav li a {
+  font-weight: bold;
+  color: black;
+}
+.portfolio .nav li a.active {
+  color: #149ddd;
+  background-color: transparent;
+  transition: 0.3s;
+}
+.portfolio .nav li a:hover {
+  color: #149ddd;
+}
+
+.portfolio .website .box::before {
+  content: "";
+  position: absolute;
+  background: rgb(0 0 0 / 15%);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s;
+}
+.portfolio .website .box:hover::before {
+  opacity: 1;
+}
+.portfolio .website .box div:last-of-type {
+  bottom: -56px;
+  background-color: rgba(20, 157, 221, 0.75);
+  transition: 0.3s;
+}
+.portfolio .website .box:hover div:last-of-type {
+  bottom: 0;
+}
+/* End Portfolio */
+/* Start Testimonials */
+.testimonials {
+  background-color: #f5f8fd;
+}
+.testimonials .owl-item .blockquote {
+  position: relative;
+  background-color: white;
+  padding: 10px 10px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 14%);
+  margin-bottom: 40px;
+  font-size: 18px;
+  cursor: grab;
+}
+
+.testimonials .owl-item .blockquote::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 25px solid;
+  border-color: white transparent transparent transparent;
+}
+.testimonials .owl-item .blockquote p svg {
+  opacity: 0.4;
+  color: #149ddd;
+  font-size: 20px;
+}
+.testimonials .owl-dots {
+  margin-top: 25px;
+}
+.testimonials .owl-dots button {
+  background: white;
+  border: 2px solid #149ddd;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+.testimonials .owl-dots button.active {
+  background-color: #149ddd;
+}
+/* End Testimonials */
+/* Start Contact */
+.contact .address,
+.contact .form {
+  box-shadow: 0 0 10px rgb(0 0 0 / 14%);
+}
+.contact .address .map-responsive {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.contact .address .map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.contact .content svg {
+  background-color: #dff3fc;
+  color: #149ddd;
+  padding: 15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.contact .form {
+  width: 64%;
+}
+@media (max-width: 767px) {
+  .contact .form {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 890px;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 100%;
+  }
+}
+/* End Contact */
